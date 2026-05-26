@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedro Henrique — Dev Full Stack | Embarcadero | Cyber Security</title>
+  <meta name="description" content="Portfólio de Pedro Henrique — Desenvolvedor Full Stack, Embarcadero/Delphi, Assembly, Cyber Segurança e Criptografia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cert-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-top:2rem; }
+    .cert-card { background:var(--bg-card); border:1px solid var(--border); border-radius:14px; padding:1.4rem 1.6rem; display:flex; align-items:flex-start; gap:1rem; transition:var(--transition); }
+    .cert-card:hover { border-color:var(--border-hover); transform:translateY(-3px); box-shadow:var(--shadow-glow); }
+    .cert-icon { font-size:1.8rem; flex-shrink:0; }
+    .cert-card h4 { font-size:.92rem; margin-bottom:.25rem; }
+    .cert-card p { font-size:.78rem; color:var(--text-muted); line-height:1.5; }
+    .cert-status { display:inline-flex; align-items:center; gap:.35rem; font-family:var(--font-mono); font-size:.68rem; margin-top:.5rem; padding:.2rem .6rem; border-radius:6px; }
+    .status-ok { background:rgba(52,211,153,.1); border:1px solid rgba(52,211,153,.3); color:#34d399; }
+    .status-em { background:rgba(124,58,237,.1); border:1px solid rgba(124,58,237,.3); color:#a78bfa; }
+    .qual-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:2rem; }
+    .qual-item { background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent-primary); border-radius:0 12px 12px 0; padding:1.2rem 1.4rem; transition:var(--transition); }
+    .qual-item:hover { border-color:var(--border-hover); border-left-color:var(--accent-primary); transform:translateX(4px); }
+    .qual-item h4 { font-size:.88rem; margin-bottom:.3rem; }
+    .qual-item p { font-size:.78rem; color:var(--text-muted); line-height:1.5; }
+    .ticker-wrap { overflow:hidden; background:rgba(0,212,255,.04); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:.6rem 0; }
+    .ticker { display:flex; gap:3rem; width:max-content; animation:ticker 30s linear infinite; }
+    .ticker:hover { animation-play-state:paused; }
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .ticker-item { display:flex; align-items:center; gap:.5rem; font-family:var(--font-mono); font-size:.78rem; color:var(--text-muted); white-space:nowrap; }
+    .ticker-item i { color:var(--accent-primary); }
+  </style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="page-transition"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">&lt;<span>PH</span>/&gt;</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="experiencia.html">Experiência</a></li>
+      <li><a href="contato.html" class="nav-cta">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+  <canvas id="hero-particles" style="position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0.6;"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Disponível para novos projetos
+    </div>
+
+    <h1 class="hero-title">
+      Olá, eu sou
+      <span class="name-highlight">Pedro Henrique</span>
+    </h1>
+
+    <p class="hero-subtitle">&gt;&nbsp;<span class="typing-text"></span><span class="typing-cursor"></span></p>
+
+    <p class="hero-desc">
+      Desenvolvedor Full Stack com 3+ anos de experiência. Especialista em
+      Embarcadero/Delphi, Assembly x86/x64, Cyber Segurança, Criptografia e
+      desenvolvimento mobile com Flutter. Do baixo nível ao cloud — domino o stack completo.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="experiencia.html" class="btn btn-primary">
+        <i class="fa-solid fa-code"></i> Ver Projetos
+      </a>
+      <a href="sobre.html" class="btn btn-outline">
+        <i class="fa-solid fa-user"></i> Sobre Mim
+      </a>
+      <a href="https://github.com/Ph20sr" target="_blank" class="btn btn-social" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/pedro-henrique" target="_blank" class="btn btn-social" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://wa.me/5515988254870" target="_blank" class="btn btn-social" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="mailto:pedrohenrivb20@gmail.com" class="btn btn-social" aria-label="E-mail">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="3" data-suffix="+">0</span></div>
+        <div class="stat-label">Anos de Experiência</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="20" data-suffix="+">0</span></div>
+        <div class="stat-label">Projetos Entregues</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="15" data-suffix="+">0</span></div>
+        <div class="stat-label">Tecnologias</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="6" data-suffix="">0</span></div>
+        <div class="stat-label">Cursos em Andamento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER DE TECNOLOGIAS -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item"><i class="fa-solid fa-microchip"></i> Assembly x86/x64</span>
+    <span class="ticker-item"><i class="fa-solid fa-shield-halved"></i> Cyber Segurança</span>
+    <span class="ticker-item"><i class="fa-solid fa-key"></i> Criptografia AES·RSA·ECC</span>
+    <span class="ticker-item"><i class="fa-solid fa-mobile-screen"></i> Flutter · Dart</span>
+    <span class="ticker-item"><i class="fa-brands fa-php"></i> PHP Avançado</span>
+    <span class="ticker-item"><i class="fa-brands fa-java"></i> Java</span>
+    <span class="ticker-item"><i class="fa-brands fa-js"></i> JavaScript</span>
+    <span class="ticker-item"><i class="fa-solid fa-database"></i> MySQL · FireDAC</span>
+    <span class="ticker-item"><i class="fa-solid fa-plug"></i> APIs REST</span>
+    <span class="ticker-item"><i class="fa-solid fa-server"></i> Embarcadero RAD Studio</span>
+    <span class="ticker-item"><i class="fa-solid fa-code"></i> Delphi · Object Pascal</span>
+    <span class="ticker-item"><i class="fa-solid fa-lock"></i> JWT · OAuth · SSL/TLS</span>
+    <!-- repete para loop infinito -->
+    <span class="ticker-item"><i class="fa-solid fa-microchip"></i> Assembly x86/x64</span>
+    <span class="ticker-item"><i class="fa-solid fa-shield-halved"></i> Cyber Segurança</span>
+    <span class="ticker-item"><i class="fa-solid fa-key"></i> Criptografia AES·RSA·ECC</span>
+    <span class="ticker-item"><i class="fa-solid fa-mobile-screen"></i> Flutter · Dart</span>
+    <span class="ticker-item"><i class="fa-brands fa-php"></i> PHP Avançado</span>
+    <span class="ticker-item"><i class="fa-brands fa-java"></i> Java</span>
+    <span class="ticker-item"><i class="fa-brands fa-js"></i> JavaScript</span>
+    <span class="ticker-item"><i class="fa-solid fa-database"></i> MySQL · FireDAC</span>
+    <span class="ticker-item"><i class="fa-solid fa-plug"></i> APIs REST</span>
+    <span class="ticker-item"><i class="fa-solid fa-server"></i> Embarcadero RAD Studio</span>
+    <span class="ticker-item"><i class="fa-solid fa-code"></i> Delphi · Object Pascal</span>
+    <span class="ticker-item"><i class="fa-solid fa-lock"></i> JWT · OAuth · SSL/TLS</span>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <p class="section-label reveal">O que eu faço</p>
+    <h2 class="section-title reveal">Serviços & <span class="gradient-text">Especialidades</span></h2>
+    <p class="section-desc reveal">Da ideia ao deploy — desenvolvimento completo com foco em performance, segurança e escalabilidade.</p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-icon">🔩</div>
+        <h4>Baixo Nível & Sistemas</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;margin-bottom:1rem;">
+          Programação Assembly x86/x64, engenharia reversa, análise de binários e otimização de código próximo ao hardware. Base essencial para Cyber Segurança.
+        </p>
+        <div class="tags" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+          <span class="tag">Assembly</span><span class="tag">x86/x64</span><span class="tag">Eng. Reversa</span><span class="tag">Hardware</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-icon">🖥️</div>
+        <h4>Embarcadero · Delphi Completo</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;margin-bottom:1rem;">
+          Desenvolvimento desktop e mobile com RAD Studio, FireMonkey (FMX), VCL e FireDAC. Apps nativos para Windows, Android e iOS com uma única base de código.
+        </p>
+        <div class="tags" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+          <span class="tag">Delphi</span><span class="tag">Object Pascal</span><span class="tag">FMX</span><span class="tag">VCL</span><span class="tag">FireDAC</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-card-icon">🛡️</div>
+        <h4>Cyber Segurança & Criptografia</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;margin-bottom:1rem;">
+          Pentesting, análise de vulnerabilidades OWASP, hardening de sistemas e implementação de algoritmos criptográficos: AES-256, RSA-2048, SHA, ECC, JWT.
+        </p>
+        <div class="tags" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+          <span class="tag">Pentesting</span><span class="tag">AES/RSA</span><span class="tag">SSL/TLS</span><span class="tag">OWASP</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-4">
+        <div class="skill-card-icon">⚙️</div>
+        <h4>Back-end & APIs</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;margin-bottom:1rem;">
+          APIs REST robustas, sistemas CRM, dashboards e lógica de negócio com PHP e Java. Integrações autenticadas com sistemas dedicados e externos.
+        </p>
+        <div class="tags" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+          <span class="tag">PHP</span><span class="tag">Java</span><span class="tag">MySQL</span><span class="tag">APIs REST</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-icon">📱</div>
+        <h4>Mobile Multiplataforma</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;margin-bottom:1rem;">
+          Apps nativos para Android e iOS com Flutter/Dart e Delphi/FMX. UI reativa, gerenciamento de estado, integração com APIs e autenticação segura.
+        </p>
+        <div class="tags" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+          <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">FMX Mobile</span><span class="tag">Android/iOS</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-icon">🌐</div>
+        <h4>Front-end & Web Design</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;margin-bottom:1rem;">
+          Interfaces modernas, responsivas e acessíveis com HTML5, CSS3 e JavaScript. Web design focado em UX, animações e experiências visuais de alto impacto.
+        </p>
+        <div class="tags" style="display:flex;flex-wrap:wrap;gap:.4rem;">
+          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Web Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICAÇÕES / CERTIFICAÇÕES -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">Formação & Certificações</p>
+    <h2 class="section-title reveal">Qualificações <span class="gradient-text">Técnicas</span></h2>
+    <p class="section-desc reveal">Formação contínua, cursos e conhecimentos que compõem meu perfil técnico completo.</p>
+
+    <!-- ── Em andamento ── -->
+    <div style="display:flex;align-items:center;gap:.75rem;margin:2rem 0 1rem;" class="reveal">
+      <span style="font-family:var(--font-mono);font-size:.72rem;color:#a78bfa;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.25);padding:.3rem .8rem;border-radius:100px;">● Em andamento</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(124,58,237,.3),transparent);"></div>
+    </div>
+
+    <div class="cert-grid">
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon">🔩</div>
+        <div>
+          <h4>Assembly x86/x64</h4>
+          <p>Registradores, pilha, syscalls Linux/Windows, modos de endereçamento, engenharia reversa e otimização de código de máquina.</p>
+          <span class="cert-status status-em"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Em Curso — 2025</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon">🖥️</div>
+        <div>
+          <h4>Embarcadero RAD Studio</h4>
+          <p>Delphi completo — Mobile (FMX) + Desktop (VCL), FireDAC, DataSnap, Object Pascal avançado e arquitetura MVC.</p>
+          <span class="cert-status status-em"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Em Curso — 2025</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon">🛡️</div>
+        <div>
+          <h4>Cyber Segurança</h4>
+          <p>Pentesting, análise de vulnerabilidades OWASP, hardening de sistemas, firewall, IDS/IPS, resposta a incidentes e forense digital.</p>
+          <span class="cert-status status-em"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Em Curso — 2025</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-4">
+        <div class="cert-icon">🔑</div>
+        <div>
+          <h4>Algoritmos de Criptografia</h4>
+          <p>AES-256-GCM, RSA-2048, SHA-256/512, ECC, HMAC, JWT, SSL/TLS, chaves público/privada, PKI e protocolos de autenticação.</p>
+          <span class="cert-status status-em"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Em Curso — 2025</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon">📱</div>
+        <div>
+          <h4>Flutter & Dart</h4>
+          <p>Apps multiplataforma Android/iOS, widgets reativos, gerenciamento de estado, integração com APIs REST e publicação nas lojas.</p>
+          <span class="cert-status status-em"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Em Curso — 2024/25</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Concluídos ── -->
+    <div style="display:flex;align-items:center;gap:.75rem;margin:2.5rem 0 1rem;" class="reveal">
+      <span style="font-family:var(--font-mono);font-size:.72rem;color:#34d399;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25);padding:.3rem .8rem;border-radius:100px;">✓ Concluídos</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(52,211,153,.3),transparent);"></div>
+    </div>
+
+    <div class="cert-grid">
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon">⚙️</div>
+        <div>
+          <h4>Full Stack Web — PHP & Java</h4>
+          <p>Back-end avançado com PHP e Java, APIs REST, MySQL, autenticação JWT, sessões seguras e deploy de sistemas web completos.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Concluído — 2022/24</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon">🌐</div>
+        <div>
+          <h4>Front-end & Web Design</h4>
+          <p>HTML5, CSS3, JavaScript ES6+, design responsivo, animações CSS, UX/UI e boas práticas de acessibilidade web.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Concluído — 2022/23</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon">🖧</div>
+        <div>
+          <h4>Hardware, Redes & Infraestrutura</h4>
+          <p>Montagem/manutenção de PCs, redes LAN/WAN, TCP/IP, DNS, DHCP, VLANs, configuração de roteadores, switches e servidores.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Concluído — 2021</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-4">
+        <div class="cert-icon">📊</div>
+        <div>
+          <h4>Marketing Digital & E-commerce</h4>
+          <p>Estratégias de marketing digital, tráfego pago, SEO, automação de vendas, dropshipping e gestão de lojas online.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Concluído — 2021</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Conhecimentos Complementares ── -->
+    <div style="display:flex;align-items:center;gap:.75rem;margin:2.5rem 0 1rem;" class="reveal">
+      <span style="font-family:var(--font-mono);font-size:.72rem;color:var(--accent-primary);letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);padding:.3rem .8rem;border-radius:100px;">+ Conhecimentos Complementares</span>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,212,255,.25),transparent);"></div>
+    </div>
+
+    <div class="cert-grid">
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon">💎</div>
+        <div>
+          <h4>C# & .NET — Noções Avançadas</h4>
+          <p>Orientação a objetos, LINQ, Entity Framework, desenvolvimento de APIs com ASP.NET e aplicações desktop com Windows Forms e WPF.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon">📘</div>
+        <div>
+          <h4>TypeScript</h4>
+          <p>Tipagem estática sobre JavaScript, interfaces, generics, decorators e uso em projetos front-end e back-end com Node.js.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon">🔗</div>
+        <div>
+          <h4>JSON & Formatos de Dados</h4>
+          <p>Estruturação, parse e serialização de JSON, XML e YAML. Integração de payloads em APIs REST, configurações de sistemas e troca de dados entre plataformas.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-4">
+        <div class="cert-icon">🌍</div>
+        <div>
+          <h4>APIs — Arquitetura & Padrões</h4>
+          <p>REST, SOAP, GraphQL (noções), autenticação OAuth2, API Keys, rate limiting, versionamento, documentação com Swagger/OpenAPI e integração entre sistemas.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon">🌐</div>
+        <div>
+          <h4>Redes & Protocolos</h4>
+          <p>Modelo OSI/TCP-IP, HTTP/HTTPS, FTP, SSH, DNS, DHCP, VPN, proxy, análise de pacotes com Wireshark e configuração de redes seguras.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon">🗄️</div>
+        <div>
+          <h4>Infraestrutura & Servidores</h4>
+          <p>Configuração de servidores Linux/Windows Server, Apache, Nginx, gerenciamento de permissões, deploy de aplicações e noções de virtualização.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <h4>Segurança de Redes</h4>
+          <p>Firewall (iptables, pfSense), IDS/IPS, segmentação de redes, VLANs, análise de tráfego suspeito, detecção de intrusão e hardening de servidores.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-4">
+        <div class="cert-icon">🐍</div>
+        <div>
+          <h4>Python — Noções & Scripts</h4>
+          <p>Scripts de automação, manipulação de arquivos, requisições HTTP com requests, parsing de dados e uso em contexto de Cyber Segurança e scripting.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-icon">🗃️</div>
+        <div>
+          <h4>Banco de Dados Avançado</h4>
+          <p>MySQL avançado, stored procedures, triggers, views, índices, normalização, backup/restore e noções de bancos NoSQL como MongoDB e Redis.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-icon">🧠</div>
+        <div>
+          <h4>Lógica de Programação & Algoritmos</h4>
+          <p>Fundamentos sólidos de lógica, estruturas de dados (pilha, fila, listas, árvores), algoritmos de ordenação e busca, complexidade e otimização.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Base essencial</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-icon">🔄</div>
+        <div>
+          <h4>Git & Versionamento</h4>
+          <p>Controle de versão com Git, branches, merge, rebase, pull requests, resolução de conflitos e fluxo de trabalho GitFlow em projetos profissionais.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-4">
+        <div class="cert-icon">🖥️</div>
+        <div>
+          <h4>Sistemas Operacionais</h4>
+          <p>Windows (avançado), Linux (Ubuntu, Debian, Kali) — instalação, configuração, gerenciamento de processos, permissões, shell scripting e bash.</p>
+          <span class="cert-status status-ok"><i class="fa-solid fa-circle" style="font-size:.5rem;"></i> Conhecimento complementar</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <p class="section-label reveal">Por que me contratar</p>
+    <h2 class="section-title reveal">Meus <span class="gradient-text">Diferenciais</span></h2>
+
+    <div class="qual-grid">
+      <div class="qual-item reveal reveal-delay-1">
+        <h4>🔩 Do Assembly ao Flutter</h4>
+        <p>Domino desde o nível mais baixo (Assembly, hardware) até o mais alto (apps mobile, web). Poucos devs têm essa amplitude.</p>
+      </div>
+      <div class="qual-item reveal reveal-delay-2">
+        <h4>🛡️ Segurança como prioridade</h4>
+        <p>Todo sistema que desenvolvo é construído com segurança em mente — criptografia, autenticação robusta e boas práticas OWASP.</p>
+      </div>
+      <div class="qual-item reveal reveal-delay-3">
+        <h4>🖥️ Especialista Embarcadero</h4>
+        <p>Delphi/RAD Studio para desktop e mobile nativo — tecnologia poderosa e ainda muito demandada no mercado corporativo.</p>
+      </div>
+      <div class="qual-item reveal reveal-delay-4">
+        <h4>📈 Aprendizado contínuo</h4>
+        <p>6 cursos em andamento simultaneamente. Sempre na fronteira do conhecimento, incorporando novas tecnologias ao trabalho.</p>
+      </div>
+      <div class="qual-item reveal reveal-delay-1">
+        <h4>🔗 Full Stack real</h4>
+        <p>3+ anos de experiência profissional cobrindo banco de dados, back-end, front-end, APIs, mobile e desktop.</p>
+      </div>
+      <div class="qual-item reveal reveal-delay-2">
+        <h4>💬 Comunicação clara</h4>
+        <p>Experiência com home office e clientes remotos. Comunicação eficiente, prazos cumpridos e entregas documentadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GITHUB CTA -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal" style="
+      display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+      background:linear-gradient(135deg,rgba(0,212,255,.06),rgba(124,58,237,.06));
+      border:1px solid var(--border); border-radius:24px; padding:3rem 2.5rem;
+      position:relative; overflow:hidden;
+    ">
+      <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:1px;background:linear-gradient(90deg,transparent,var(--accent-primary),transparent);"></div>
+
+      <!-- GitHub -->
+      <div>
+        <p class="section-label" style="margin-bottom:.75rem;">Código aberto</p>
+        <h3 style="font-size:1.6rem;margin-bottom:.75rem;">Veja meu <span class="gradient-text">GitHub</span></h3>
+        <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.8;margin-bottom:1.5rem;">
+          Projetos reais em Assembly, Cyber Segurança, CRM, APIs e muito mais. Código limpo, documentado e organizado.
+        </p>
+        <a href="https://github.com/Ph20sr" target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> Acessar GitHub
+        </a>
+      </div>
+
+      <!-- Contato -->
+      <div>
+        <p class="section-label" style="margin-bottom:.75rem;">Vamos trabalhar juntos</p>
+        <h3 style="font-size:1.6rem;margin-bottom:.75rem;">Entre em <span class="gradient-text">Contato</span></h3>
+        <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.8;margin-bottom:1.5rem;">
+          Disponível para projetos freelance, colaborações e oportunidades full-time. Respondo em até 24h.
+        </p>
+        <a href="contato.html" class="btn btn-outline">
+          <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">&lt;PH/&gt;</span>
+    <span class="footer-text">Desenvolvido com <span>♥</span> por Pedro Henrique · 2025</span>
+    <div style="display:flex;gap:.6rem;">
+      <a href="https://github.com/Ph20sr" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/pedro-henrique" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://wa.me/5515988254870" target="_blank" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="mailto:pedrohenrivb20@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
