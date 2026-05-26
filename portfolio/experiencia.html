@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiência — Pedro Henrique Dev</title>
+  <meta name="description" content="Trajetória profissional e projetos de Pedro Henrique — desenvolvedor Full Stack, Embarcadero, Assembly, Cyber Segurança e Criptografia." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Badge "em curso" especial */
+    .tag-cursando {
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.4);
+      color: #a78bfa;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: .2rem .6rem;
+      border-radius: 6px;
+      letter-spacing: .05em;
+    }
+
+    /* Dot roxo para cursos em andamento */
+    .dot-purple {
+      background: #a78bfa !important;
+      box-shadow: 0 0 12px #a78bfa !important;
+    }
+
+    /* Dot verde para conquistas */
+    .dot-green {
+      background: #34d399 !important;
+      box-shadow: 0 0 12px #34d399 !important;
+    }
+
+    /* Seção de linguagens */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .lang-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+
+    .lang-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .lang-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .lang-card h5 {
+      font-size: .9rem;
+      margin-bottom: .25rem;
+      font-family: var(--font-mono);
+      color: var(--accent-primary);
+    }
+
+    .lang-card p {
+      font-size: .78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Categoria header */
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin: 3.5rem 0 1.5rem;
+    }
+
+    .cat-header-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    .cat-header-label {
+      font-family: var(--font-mono);
+      font-size: .72rem;
+      color: var(--accent-primary);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: var(--bg-primary);
+      padding: .3rem .8rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="page-transition"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">&lt;<span>PH</span>/&gt;</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="experiencia.html" class="active">Experiência</a></li>
+      <li><a href="contato.html" class="nav-cta">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section style="
+  padding: calc(var(--nav-height) + 4rem) 2rem 3rem;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+">
+  <div style="position:absolute;top:-100px;left:-100px;width:450px;height:450px;
+    background:radial-gradient(circle,rgba(124,58,237,0.1),transparent);
+    border-radius:50%;pointer-events:none;"></div>
+  <div style="position:absolute;top:-80px;right:-80px;width:350px;height:350px;
+    background:radial-gradient(circle,rgba(0,212,255,0.07),transparent);
+    border-radius:50%;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,var(--border),transparent);"></div>
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">Trajetória Completa</p>
+    <h1 class="section-title">Experiência, Cursos & <span class="gradient-text">Projetos</span></h1>
+    <p style="color:var(--text-secondary);font-size:1rem;max-width:600px;line-height:1.8;">
+      Mais de 3 anos de atuação profissional, formação contínua em tecnologias de ponta —
+      do Assembly ao Flutter, do Delphi à Cyber Segurança.
+    </p>
+    <!-- Counters rápidos -->
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.5rem;">
+      <div>
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          <span class="count-up" data-target="3" data-suffix="+">0</span>
+        </div>
+        <div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Anos de Experiência</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          <span class="count-up" data-target="15" data-suffix="+">0</span>
+        </div>
+        <div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Tecnologias Dominadas</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          <span class="count-up" data-target="20" data-suffix="+">0</span>
+        </div>
+        <div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Projetos Entregues</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          <span class="count-up" data-target="6" data-suffix="">0</span>
+        </div>
+        <div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Cursos em Andamento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">Linha do Tempo</p>
+    <h2 class="section-title reveal">Minha <span class="gradient-text">Trajetória</span></h2>
+    <p class="section-desc reveal">Da base ao avançado — cada etapa construiu o profissional que sou hoje.</p>
+
+    <div class="timeline" style="margin-top:3rem;">
+
+      <!-- ── 2025 — ATUAL ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-purple"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-circle-dot" style="margin-right:.4rem;color:#a78bfa;"></i>
+            2025 — Cursando Atualmente
+          </div>
+          <h3 class="timeline-title">Embarcadero RAD Studio — Delphi Completo (Mobile + Desktop)</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-graduation-cap" style="margin-right:.4rem;color:#a78bfa;"></i>
+            Embarcadero Technologies · Formação Avançada
+          </div>
+          <p class="timeline-desc">
+            Formação completa no ecossistema Embarcadero: Delphi para desktop e mobile com FireMonkey (FMX),
+            VCL, DataSnap, FireDAC e integração com bancos de dados. Desenvolvimento de aplicações
+            nativas para Windows, Android e iOS a partir de uma única base de código. Estudo aprofundado
+            da IDE RAD Studio, componentes visuais, arquitetura MVC e padrões de projeto em Object Pascal.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Delphi</span>
+            <span class="tag">Object Pascal</span>
+            <span class="tag">FireMonkey</span>
+            <span class="tag">VCL</span>
+            <span class="tag">FireDAC</span>
+            <span class="tag">DataSnap</span>
+            <span class="tag">RAD Studio</span>
+            <span class="tag">Mobile</span>
+            <span class="tag">Desktop</span>
+            <span class="tag-cursando">● Em Curso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2025 — Assembly ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-purple"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-circle-dot" style="margin-right:.4rem;color:#a78bfa;"></i>
+            2025 — Cursando Atualmente
+          </div>
+          <h3 class="timeline-title">Assembly — Programação de Baixo Nível</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-microchip" style="margin-right:.4rem;color:#a78bfa;"></i>
+            Formação em Linguagem de Máquina
+          </div>
+          <p class="timeline-desc">
+            Estudo da linguagem Assembly x86/x64 — a linguagem mais próxima do hardware.
+            Compreensão profunda de registradores, pilha de memória, instruções de CPU, modos de
+            endereçamento e otimização de código em baixo nível. Base essencial para análise de
+            malware, engenharia reversa e desenvolvimento de sistemas de alto desempenho.
+            Aplicação direta nos estudos de Cyber Segurança e criptografia.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Assembly x86/x64</span>
+            <span class="tag">Registradores</span>
+            <span class="tag">Gerenc. de Memória</span>
+            <span class="tag">Eng. Reversa</span>
+            <span class="tag">Otimização</span>
+            <span class="tag-cursando">● Em Curso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2025 — Cyber Seg ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-purple"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-circle-dot" style="margin-right:.4rem;color:#a78bfa;"></i>
+            2025 — Cursando Atualmente
+          </div>
+          <h3 class="timeline-title">Cyber Segurança & Criptografia</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-shield-halved" style="margin-right:.4rem;color:#a78bfa;"></i>
+            Segurança Ofensiva e Defensiva · Formação Avançada
+          </div>
+          <p class="timeline-desc">
+            Formação em Cyber Segurança abrangendo tanto o lado ofensivo quanto defensivo:
+            análise de vulnerabilidades, pentesting, hardening de sistemas, redes seguras e
+            resposta a incidentes. Estudo de linguagens e algoritmos de criptografia —
+            AES, RSA, SHA, ECC — com foco em implementação e análise criptográfica.
+            Conhecimentos em protocolos SSL/TLS, autenticação multifator e sistemas de chave pública/privada.
+            Complementado pelo Assembly para análise de baixo nível e engenharia reversa.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Pentesting</span>
+            <span class="tag">Criptografia</span>
+            <span class="tag">AES / RSA</span>
+            <span class="tag">SHA / ECC</span>
+            <span class="tag">SSL/TLS</span>
+            <span class="tag">Redes Seguras</span>
+            <span class="tag">Hardening</span>
+            <span class="tag">OWASP</span>
+            <span class="tag-cursando">● Em Curso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2025 — Flutter/Dart ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-purple"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-circle-dot" style="margin-right:.4rem;color:#a78bfa;"></i>
+            2024 – 2025 — Em Desenvolvimento
+          </div>
+          <h3 class="timeline-title">Flutter & Dart — Desenvolvimento Mobile Avançado</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-mobile-screen" style="margin-right:.4rem;color:#a78bfa;"></i>
+            Google Flutter SDK · Apps Multiplataforma
+          </div>
+          <p class="timeline-desc">
+            Desenvolvimento de aplicativos multiplataforma (Android e iOS) com Flutter e Dart.
+            Criação de interfaces reativas com widgets, gerenciamento de estado, navegação avançada,
+            integração com APIs REST e autenticação. Aplicações com design moderno, animações
+            fluidas e performance nativa. Combina com os estudos de Embarcadero para cobertura
+            completa de desenvolvimento mobile.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Widgets</span>
+            <span class="tag">State Management</span>
+            <span class="tag">APIs REST</span>
+            <span class="tag">Android / iOS</span>
+            <span class="tag-cursando">● Em Curso</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2022–Presente — Profissional ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-briefcase" style="margin-right:.4rem;"></i>
+            2022 — Presente · <strong style="color:var(--accent-primary);">Emprego Atual</strong>
+          </div>
+          <h3 class="timeline-title">Desenvolvedor Full Stack</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-building" style="margin-right:.4rem;color:var(--accent-primary);"></i>
+            Empresa de Desenvolvimento de Software
+          </div>
+          <p class="timeline-desc">
+            Atuação como desenvolvedor full stack em ambiente profissional. Responsável por
+            arquitetura, desenvolvimento e entrega de sistemas completos — desde o banco de dados até
+            a interface do usuário. Desenvolvimento de dashboards gerenciais com dados em tempo real,
+            sistemas CRM customizados, integrações diretas com APIs de parceiros e sistemas externos,
+            conexões com sistemas dedicados e autenticados. Trabalho com front-end e back-end
+            de forma integrada, entregando soluções escaláveis e de alto desempenho. Participação
+            ativa em todo o ciclo de desenvolvimento: levantamento de requisitos, modelagem,
+            codificação, testes e deploy.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Java</span>
+            <span class="tag">HTML5 / CSS3</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">APIs REST</span>
+            <span class="tag">Dashboards</span>
+            <span class="tag">CRM</span>
+            <span class="tag">Full Stack</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2021–2022 — TI Home Office ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-green"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-calendar-days" style="margin-right:.4rem;"></i>
+            2021 – 2022
+          </div>
+          <h3 class="timeline-title">TI Avançado / Programador Autônomo</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-house-laptop" style="margin-right:.4rem;color:#34d399;"></i>
+            Home Office — Projetos Freelance
+          </div>
+          <p class="timeline-desc">
+            Atuação autônoma como profissional de TI e programador. Desenvolvimento de soluções
+            sob demanda para clientes: sites, sistemas de gestão, automações, integrações entre
+            plataformas e aplicações desktop. Suporte técnico avançado, manutenção de hardware,
+            montagem e configuração de redes. Base prática sólida que pavimentou a entrada
+            no mercado de software profissional.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Delphi</span>
+            <span class="tag">PHP</span>
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Hardware</span>
+            <span class="tag">Redes</span>
+            <span class="tag">Web Design</span>
+            <span class="tag">Freelance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2022–2024 — Formação Back/Front ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-green"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-graduation-cap" style="margin-right:.4rem;"></i>
+            2022 – 2024
+          </div>
+          <h3 class="timeline-title">Formação Full Stack — Front-end & Back-end</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-school" style="margin-right:.4rem;color:#34d399;"></i>
+            Cursos Técnicos & Certificações
+          </div>
+          <p class="timeline-desc">
+            Formação técnica abrangente em programação: HTML, CSS, JavaScript (front-end);
+            PHP, Java para back-end; MySQL para banco de dados; APIs REST e integração de sistemas.
+            Desenvolvimento de software do zero, arquitetura de sistemas, boas práticas de código
+            e versionamento. Certificações complementares em web design, UX/UI e desenvolvimento ágil.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">Java</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">APIs</span>
+            <span class="tag">Web Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2021 — Base ── -->
+      <div class="timeline-item">
+        <div class="timeline-dot dot-green"></div>
+        <div class="timeline-card">
+          <div class="timeline-date">
+            <i class="fa-solid fa-calendar-days" style="margin-right:.4rem;"></i>
+            2021
+          </div>
+          <h3 class="timeline-title">Fundamentos de TI, Computação & Hardware</h3>
+          <div class="timeline-company">
+            <i class="fa-solid fa-computer" style="margin-right:.4rem;color:#34d399;"></i>
+            Cursos Complementares · Base Técnica
+          </div>
+          <p class="timeline-desc">
+            Início formal na área de tecnologia: cursos de computação, hardware e infraestrutura,
+            montagem e manutenção de PCs, redes locais e configuração de sistemas operacionais.
+            Primeiros contatos com lógica de programação, web design, marketing digital e
+            dropshipping. A base que deu início a toda a jornada em desenvolvimento de software.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Hardware</span>
+            <span class="tag">Computação</span>
+            <span class="tag">Redes</span>
+            <span class="tag">S.O.</span>
+            <span class="tag">Web Design</span>
+            <span class="tag">Marketing Digital</span>
+            <span class="tag">Dropshipping</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+    <!-- Legenda -->
+    <div style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2rem;padding:1.2rem 1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;">
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--text-secondary);">
+        <div style="width:10px;height:10px;background:#a78bfa;border-radius:50%;box-shadow:0 0 8px #a78bfa;"></div>
+        Em andamento / Cursando
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--text-secondary);">
+        <div style="width:10px;height:10px;background:var(--accent-primary);border-radius:50%;box-shadow:0 0 8px var(--accent-primary);"></div>
+        Emprego profissional
+      </div>
+      <div style="display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--text-secondary);">
+        <div style="width:10px;height:10px;background:#34d399;border-radius:50%;box-shadow:0 0 8px #34d399;"></div>
+        Formação / Concluído
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== LINGUAGENS & TECNOLOGIAS ===== -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <p class="section-label reveal">Arsenal Técnico</p>
+    <h2 class="section-title reveal">Linguagens & <span class="gradient-text">Tecnologias</span></h2>
+    <p class="section-desc reveal">
+      Cada linguagem tem seu propósito — do hardware ao cloud, domino o stack completo.
+    </p>
+
+    <!-- Grupo: Baixo Nível -->
+    <div class="cat-header reveal">
+      <span class="cat-header-label">⚡ Baixo Nível & Sistemas</span>
+      <div class="cat-header-line"></div>
+    </div>
+    <div class="lang-grid reveal">
+      <div class="lang-card">
+        <div class="lang-icon">🔩</div>
+        <div>
+          <h5>Assembly x86/x64</h5>
+          <p>Linguagem de máquina, registradores, gestão de memória, engenharia reversa e otimização de baixo nível.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🖥️</div>
+        <div>
+          <h5>Delphi / Object Pascal</h5>
+          <p>Desenvolvimento desktop e mobile com Embarcadero RAD Studio, FireMonkey, VCL e FireDAC. Mobile + Desktop.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">☕</div>
+        <div>
+          <h5>Java</h5>
+          <p>Back-end robusto, APIs, lógica de negócios e sistemas enterprise. Orientação a objetos avançada.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grupo: Web -->
+    <div class="cat-header reveal">
+      <span class="cat-header-label">🌐 Web Development</span>
+      <div class="cat-header-line"></div>
+    </div>
+    <div class="lang-grid reveal">
+      <div class="lang-card">
+        <div class="lang-icon">🟨</div>
+        <div>
+          <h5>JavaScript</h5>
+          <p>Front-end interativo, manipulação do DOM, animações, APIs assíncronas e lógica client-side.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🐘</div>
+        <div>
+          <h5>PHP</h5>
+          <p>Back-end web, APIs REST, autenticação, sessões, integração com MySQL e lógica server-side avançada.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🎨</div>
+        <div>
+          <h5>HTML5 / CSS3</h5>
+          <p>Interfaces modernas, responsivas e acessíveis. Web design, animações CSS e layouts avançados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grupo: Mobile -->
+    <div class="cat-header reveal">
+      <span class="cat-header-label">📱 Mobile Development</span>
+      <div class="cat-header-line"></div>
+    </div>
+    <div class="lang-grid reveal">
+      <div class="lang-card">
+        <div class="lang-icon">💙</div>
+        <div>
+          <h5>Flutter / Dart</h5>
+          <p>Apps nativos para Android e iOS a partir de um único código. UI reativa, performance e integração com APIs.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🔥</div>
+        <div>
+          <h5>Delphi Mobile (FMX)</h5>
+          <p>Desenvolvimento mobile com FireMonkey via Embarcadero — apps nativos multiplataforma com Object Pascal.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grupo: Segurança -->
+    <div class="cat-header reveal">
+      <span class="cat-header-label">🔐 Segurança & Criptografia</span>
+      <div class="cat-header-line"></div>
+    </div>
+    <div class="lang-grid reveal">
+      <div class="lang-card">
+        <div class="lang-icon">🛡️</div>
+        <div>
+          <h5>Cyber Segurança</h5>
+          <p>Pentesting, análise de vulnerabilidades, hardening, OWASP Top 10, resposta a incidentes e segurança de redes.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🔑</div>
+        <div>
+          <h5>Algoritmos de Criptografia</h5>
+          <p>AES, RSA, SHA-256/512, ECC, chaves público/privada, protocolos SSL/TLS e implementação de sistemas seguros.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🔬</div>
+        <div>
+          <h5>Engenharia Reversa</h5>
+          <p>Análise de binários com Assembly, disassembly, debugging e análise de fluxo de código para fins de segurança.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grupo: Dados & Infra -->
+    <div class="cat-header reveal">
+      <span class="cat-header-label">🗄️ Banco de Dados & Infraestrutura</span>
+      <div class="cat-header-line"></div>
+    </div>
+    <div class="lang-grid reveal">
+      <div class="lang-card">
+        <div class="lang-icon">🐬</div>
+        <div>
+          <h5>MySQL</h5>
+          <p>Modelagem de banco de dados relacional, queries complexas, stored procedures e otimização de performance.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🔗</div>
+        <div>
+          <h5>APIs REST & Integrações</h5>
+          <p>Conexão e integração de sistemas via APIs RESTful, autenticação OAuth/JWT, webhooks e sincronização.</p>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-icon">🖧</div>
+        <div>
+          <h5>Hardware & Redes</h5>
+          <p>Montagem, manutenção e configuração de hardware. Redes locais, TCP/IP, protocolos e infraestrutura.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ===== PROJETOS ===== -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">Portfólio</p>
+    <h2 class="section-title reveal">Projetos em <span class="gradient-text">Destaque</span></h2>
+    <p class="section-desc reveal">
+      Soluções construídas do zero. Clique para ver o código no GitHub.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card reveal reveal-delay-1" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">🔗</div>
+        <h4>Sistema de Integração de APIs</h4>
+        <p>Integração completa entre sistemas via APIs REST, autenticação JWT, tratamento de erros e sincronização de dados em tempo real.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">PHP</span><span class="tag">APIs REST</span><span class="tag">JSON</span><span class="tag">MySQL</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">📊</div>
+        <h4>Dashboard Gerencial</h4>
+        <p>Dashboard interativo com gráficos em tempo real, filtros dinâmicos e relatórios exportáveis para gestão empresarial.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">HTML/CSS</span><span class="tag">MySQL</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-3" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">👥</div>
+        <h4>CRM Personalizado</h4>
+        <p>Sistema CRM do zero com gestão de clientes, pipeline de vendas, histórico de interações e relatórios automatizados.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">CRM</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">🔐</div>
+        <h4>Sistema de Criptografia & Auth</h4>
+        <p>Implementação de algoritmos criptográficos (AES, RSA, SHA) e sistema de autenticação segura com controle de acesso por níveis.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">Criptografia</span><span class="tag">AES</span><span class="tag">RSA</span><span class="tag">PHP</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">📱</div>
+        <h4>App Mobile — Flutter</h4>
+        <p>Aplicativo multiplataforma (Android/iOS) com UI reativa, gerenciamento de estado, integração com API back-end e autenticação.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">APIs</span><span class="tag">Android/iOS</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-3" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">🖥️</div>
+        <h4>Sistema Desktop Embarcadero</h4>
+        <p>Aplicação nativa desktop desenvolvida com Delphi/RAD Studio: relatórios, conexão FireDAC, interface VCL e performance otimizada.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">Delphi</span><span class="tag">Object Pascal</span><span class="tag">FireDAC</span><span class="tag">VCL</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">🔩</div>
+        <h4>Projetos Assembly</h4>
+        <p>Programas em Assembly x86/x64 explorando manipulação de registradores, gerenciamento de memória e otimização de código de baixo nível.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">Assembly</span><span class="tag">x86/x64</span><span class="tag">Baixo Nível</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" onclick="window.open('https://github.com/Ph20sr','_blank')">
+        <div class="project-icon">🛡️</div>
+        <h4>Ferramenta de Cyber Segurança</h4>
+        <p>Script de análise de vulnerabilidades e hardening, com varredura de portas, detecção de exposições e relatório de segurança.</p>
+        <div class="timeline-tags" style="margin-bottom:1.2rem;">
+          <span class="tag">Segurança</span><span class="tag">Pentesting</span><span class="tag">OWASP</span><span class="tag">Scripts</span>
+        </div>
+        <div class="project-link">
+          <i class="fa-brands fa-github"></i> Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GitHub CTA -->
+    <div class="reveal" style="text-align:center;margin-top:3rem;">
+      <a href="https://github.com/Ph20sr" target="_blank" class="btn btn-primary" style="gap:.7rem;">
+        <i class="fa-brands fa-github"></i> Ver perfil completo no GitHub
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.75rem;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">&lt;PH/&gt;</span>
+    <span class="footer-text">Desenvolvido com <span>♥</span> por Pedro Henrique · 2025</span>
+    <div style="display:flex;gap:.6rem;">
+      <a href="https://github.com/Ph20sr" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:pedrohenrivb20@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

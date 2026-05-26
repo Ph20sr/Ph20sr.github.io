@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Pedro Henrique Dev</title>
+  <meta name="description" content="Entre em contato com Pedro Henrique — desenvolvedor Full Stack disponível para projetos e oportunidades." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<div class="page-transition"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">&lt;<span>PH</span>/&gt;</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="experiencia.html">Experiência</a></li>
+      <li><a href="contato.html" class="nav-cta active">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section style="
+  padding: calc(var(--nav-height) + 4rem) 2rem 3rem;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+">
+  <div style="
+    position:absolute;top:-120px;right:-80px;
+    width:400px;height:400px;
+    background:radial-gradient(circle,rgba(0,72,255,0.08),transparent);
+    border-radius:50%;pointer-events:none;
+  "></div>
+  <div style="
+    position:absolute;bottom:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,var(--border),transparent);
+  "></div>
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label">Fale comigo</p>
+    <h1 class="section-title">Entre em <span class="gradient-text">Contato</span></h1>
+    <p style="color:var(--text-secondary);font-size:1rem;max-width:540px;">
+      Quer trabalhar junto, tem um projeto em mente, ou só quer trocar uma ideia? Manda mensagem!
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT CONTENT -->
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div>
+        <div class="contact-info">
+          <h3 class="reveal">Vamos construir algo <span class="gradient-text">juntos</span></h3>
+          <p class="reveal reveal-delay-1">
+            Estou sempre aberto a novas oportunidades, projetos freelance e colaborações.
+            Se você tem uma ideia e precisa de um desenvolvedor experiente para tirar ela
+            do papel, estou aqui.
+          </p>
+        </div>
+
+        <!-- Contact Items -->
+        <div class="reveal reveal-delay-2">
+          <a href="mailto:pedrohenrivb20@gmail.com" class="contact-item" style="text-decoration:none;display:flex;">
+            <div class="contact-item-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div class="contact-item-label">E-mail</div>
+              <div class="contact-item-value">pedrohenrivb20@gmail.com</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-3">
+          <a href="tel:+5515988254870" class="contact-item" style="text-decoration:none;display:flex;">
+            <div class="contact-item-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <div class="contact-item-label">Telefone / WhatsApp</div>
+              <div class="contact-item-value">(15) 98825-4870</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-4">
+          <div class="contact-item" style="cursor:default;">
+            <div class="contact-item-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <div class="contact-item-label">Localização</div>
+              <div class="contact-item-value">Brasil 🇧🇷 — Disponível remotamente</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status -->
+        <div class="reveal" style="
+          background: rgba(0,212,255,0.06);
+          border: 1px solid rgba(0,212,255,0.2);
+          border-radius: 14px;
+          padding: 1.2rem 1.5rem;
+          margin: 1.5rem 0;
+          display: flex;
+          align-items: center;
+          gap: .8rem;
+        ">
+          <div style="width:10px;height:10px;background:var(--accent-primary);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0;"></div>
+          <div>
+            <div style="font-size:.9rem;font-weight:600;">Disponível para novos projetos</div>
+            <div style="font-size:.78rem;color:var(--text-muted);">Freelance · Full-time · Colaborações</div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="reveal">
+          <p style="font-size:.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.8rem;font-family:var(--font-mono);">Redes Sociais</p>
+          <div class="social-links">
+            <a href="https://github.com/Ph20sr" target="_blank" class="social-btn" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" class="social-btn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/5515988254870" target="_blank" class="social-btn" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:pedrohenrivb20@gmail.com" class="social-btn" title="E-mail">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form">
+
+          <!-- Form Header -->
+          <div style="margin-bottom:2rem;">
+            <h3 style="font-size:1.3rem;margin-bottom:.4rem;">Envie uma mensagem</h3>
+            <p style="font-size:.85rem;color:var(--text-muted);">Responderei em até 24 horas.</p>
+          </div>
+
+          <form class="contact-form-el">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+              <div class="form-group">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-input" placeholder="Seu nome" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-input" placeholder="seu@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Assunto</label>
+              <input type="text" class="form-input" placeholder="Sobre o que você quer falar?" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Tipo de Projeto</label>
+              <select class="form-input" style="cursor:pointer;appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238badc4' viewBox='0 0 16 16'%3E%3Cpath d='M8 10.5 3 5.5h10z'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 1rem center;background-size:16px;">
+                <option value="" style="background:var(--bg-secondary);">Selecione...</option>
+                <option value="website" style="background:var(--bg-secondary);">Website / Landing Page</option>
+                <option value="sistema" style="background:var(--bg-secondary);">Sistema / Software</option>
+                <option value="api" style="background:var(--bg-secondary);">Integração de API</option>
+                <option value="app" style="background:var(--bg-secondary);">Aplicativo Mobile</option>
+                <option value="dashboard" style="background:var(--bg-secondary);">Dashboard / CRM</option>
+                <option value="outro" style="background:var(--bg-secondary);">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Mensagem</label>
+              <textarea class="form-textarea" placeholder="Descreva seu projeto, ideia ou dúvida..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              Enviar Mensagem
+            </button>
+          </form>
+
+          <!-- Success -->
+          <div class="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Mensagem enviada!</h3>
+            <p>Obrigado pelo contato. Responderei em breve!</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ / EXTRA -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="section-inner">
+    <p class="section-label reveal">Dúvidas Frequentes</p>
+    <h2 class="section-title reveal">Perguntas <span class="gradient-text">Comuns</span></h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;">
+
+      <div class="skill-card reveal reveal-delay-1">
+        <div style="font-size:1.5rem;margin-bottom:.8rem;">⏱️</div>
+        <h4 style="margin-bottom:.6rem;">Qual o prazo médio de entrega?</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">
+          Depende da complexidade do projeto. Sites simples: 1–2 semanas.
+          Sistemas completos: 4–8 semanas. Sempre alinhamos prazos antes de começar.
+        </p>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <div style="font-size:1.5rem;margin-bottom:.8rem;">💻</div>
+        <h4 style="margin-bottom:.6rem;">Trabalha de forma remota?</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">
+          Sim! Tenho experiência sólida em home office. Comunico-me via WhatsApp,
+          e-mail ou plataformas de gestão de projeto conforme sua preferência.
+        </p>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-3">
+        <div style="font-size:1.5rem;margin-bottom:.8rem;">🔧</div>
+        <h4 style="margin-bottom:.6rem;">Faz manutenção pós-entrega?</h4>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">
+          Sim. Ofereço suporte pós-entrega e posso atuar em manutenção contínua
+          do projeto dependendo da demanda e do acordo estabelecido.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">&lt;PH/&gt;</span>
+    <span class="footer-text">Desenvolvido com <span>♥</span> por Pedro Henrique · 2025</span>
+    <div style="display:flex;gap:.6rem;">
+      <a href="https://github.com/Ph20sr" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:pedrohenrivb20@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
